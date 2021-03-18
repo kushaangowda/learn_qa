@@ -1,0 +1,5 @@
+# Venv Folder
+/venv
+
+# Pycache folder
+/__pycache__

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>QA System</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	</head>
+	<body>
+		<h1>Hello World</h1>
+		<form action="http://localhost:3000/" method="POST">
+			<p>Question: <input type="text" name="question" required /></p>
+			<button type="submit">Submit</button>
+		</form>
+		{% if flag %}
+		<p>Question: {{question}}</p>
+		<p>Processed Query: {{query}}</p>
+		<p>Generated Answer: {{answers[0]['answer']}}</p>
+		<p>Top 10 Generated Answers</p>
+		<table>
+			<tr>
+				<th>Probability</th>
+				<th>Corresponding Answer</th>
+			</tr>
+			{% for ans in answers %}
+			<tr>
+				<td>{{ans['score']}}</td>
+				<td>{{ans['answer']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</body>
+</html>
